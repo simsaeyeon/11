@@ -3,17 +3,22 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-char*proverb="All that glisters is not gold.";
-
-void setPointer(char **q){
-	*q=proverb;
-}
-
 int main(void){
-	char *p="zzz";
-	setPointer(&p);
+	int i=10;
+	char c='a';
 	
-	printf("%s\n",p);
+	int *iptr;
+	int *iptr2;
+	char *cptr;
+
+	iptr=&i;
+	cptr=&c;
 	
+	iptr2=iptr;
+	
+	printf("i : %p\n%p(size:%i)\n",iptr,&i,sizeof(iptr));
+	printf("c : %p\n%p(size:%i)\n",cptr,&c,sizeof(cptr));
+	printf("iptr2:%p, %i\n",iptr2,*iptr2);
 	return 0;
+
 }
